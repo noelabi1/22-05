@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctor Appointment Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: flex-start;
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      gap: 50px;
+    }
+
+    img {
+  width: 800px;     
+  height: auto;     
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+
+    form {
+      max-width: 500px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #8B0000;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      color: #000;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="time"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      box-sizing: border-box;
+    }
+
+    .inline {
+      display: inline-block;
+      width: 48%;
+    }
+
+    .gender-options {
+      margin-top: 4px;
+    }
+
+    textarea {
+      height: 80px;
+    }
+
+    .checkbox-group {
+      margin-top: 10px;
+    }
+
+    .checkbox-group label {
+      font-weight: normal;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 8px 16px;
+      background-color: #8B0000;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #a30000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMREhASEBAVFRUWEhAYEhMVFRUVGBgYFxYXFhcRFRgYHSggGBomHRUVIjEhJSkrLi4uFx8zODMsNygtLisBCgoKDg0OGxAQGi0lHyYtLSsvKy0tLS8vKysrNS0tLi0tLS0tKy0tLS0tLS0tLS0tLS8tLTctLS0tLS0rLS0tLv/AABEIAKMBNgMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAAAwUBBAYCBwj/xAA6EAACAQIEAwUFBgUFAQAAAAAAAQIDEQQSITEFQVEGE2FxgQciMpGhQlJiscHRFSOS8PEUU3Ki4UP/xAAZAQEBAQEBAQAAAAAAAAAAAAAAAQIDBAX/xAAjEQEBAAICAgICAwEAAAAAAAAAAQIRAxIhMQRBMlEiYXET/9oADAMBAAIRAxEAPwD7iAAAAAAAAAAAAAAAAAAABhgR4rERpxlOpJRjFNylJ2SS3bZ8L7Z+2etOcqfDrUqSbXfyipTn+KCleMY+ab8jd9v/AGmlengKTajaNTENPdO6hTfho2/TqfEtW+pNtSOwfb7iVa8Z8QrWas1Fxp6ecIprzTMUu1PEMPJwhjsTFx0yuo5q3K3eZtCLs/2JxmItKNLKns5O3rY63jfs3xLoUpQyyqU4ZZJc4r4UvJaGe8/bf/O69J+zntqxNNxjjaUK0NFKpBd3VXWTS92b8Eon2ngXHKGNpRrYaqqkH03T+7JPWL8GfkzH4GdJrvaU6b6STX+TpPZz2jqYDF05qT7qcoxrR5Si9M3mtHfpcvZm4V+oQeYSuk1z2PRpgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMMyaXGVJ0K6pyyy7qpll0eV2kKsm7p+YfalxHv+I4yW0VWlBWf+2lD11izY9mXCI1Kqq1I3S+BNc+pH2p7P1JYqjTd3pGEpSVs1nrJNfFrmV3qfQI8Nlh6KqUIvLTWuWGeSst4rn9TyZ8n8dT7e7Dh653f073h9NJJWLO9kfHqHbDiEp/yI1pJQzuNXD0pRyJJud4KLS12vc7jsv2iqYqElUgo1Ir31FOKtyks2yevNj8fa67LXjHDKVeDhWpRmnumkfJ+0XYJYafeUW3Qk0pRb1pt7NPnG+h1vHe3qoyyUYxnveUs1vS3xLyYp4+pjaMYSdKTqV6MJqnGSlBNtu8ZSd9t7q1hjKzn4j6L2elJ4bDufxd1Tv52LE8UYKMVFbJJL0PZ648IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeZxumns9GegB857Xdl5JKpGKkoO+fTMo7q7vdtbbbfIj4BimopN89md9xe3c1c22SV36HzTDYa0oq9mpNP9GePlxmN8PofH5LnLMnXujQSzZILS+y3XQgwEFOdWSVlka8evPzKmtinRko1YNxnFqM8yt0cGn8L/M1sPSrUZN0nV7uUYO81e172s9n6k83zp06rz+FUakY5oR92V46L3ZJWzLpK2l9yz7PYGEHLJFJbt823zb5s5uhXdZKdDPZNxlKUXHO1o3Z2v5o7bhWHyU0nu9Wb4pu/wCOPPZjjr7rcRkA9TwgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABhsjxOJhThKpUnGEIpuc5NRjFLeTb0SNR4rvqbdKTV4vJJqzel00nqk/Esm0tU/bXi0FSqYeMv5koq6ttFuzd/mcHhca4NKfLZ+HJM6fjGDzuFTqsr8021fzuyo4jw9OOx5fkSzksez41lwlXmDyYiGWVnps9TNTgNN2UpNxVvdbdvK3Q4mGNnS0V0zbo8VruyUm5SaUY7at2SbXmcpZ6j0zLLH1dPpPCsBHSWlloork/EuEUvZ/CulGV5Nq0F5tLWXnsb+D4lTqyqQjL36btUpvSUb7Nro+TWjPd0mHiPmXO5+a3AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABi5iU0jXxuJyZEt5Ssvk3+hBThaTl4K/ja7T9Lv5lkG28QuSIq+LUISnPSMU3J9EldsWt9Tkfahi5RwEqUHaeIqUaCadn/Mmotr5mpNptVcJo1uNVo4zEylHAwqZsJhdlVcHpXrr7Suk0vDpv8AQ2tUzS4dgKdCjRpRjaNOEYpK6Wi8GTOnD3U990nJv6Nlt2iDFYFLNb4JXco9PGJQxhGWZRnGaUmm4tPXo7bM61u+luRz3E8N3LjkSVO1kkklF9PLocuaTLHd9x04N456nquexXCk29De7PcFSqd47OUdIL7rtrJ9HZ/XxNjJn9xPWWiez15/mdFw7h8aSVrObjBTqZUnPLe17ctW7fiZy+PjN9r9enb5OV11n22qMMsUjjPaJw6pCMeIYSTjicMs2m1Wl9qjNfaj+R2VVSt7rSfirnK9q+1uFwyqUK9aMqkoSTpQjOcveTSuoptep6sd9tvL9L/gfGY4qhRrwXu1KcJx8pK9iyVVHzL2S8dpPC08LOplq0p1UoTTjeDm3Bq++jS9D6LN2d/mTLHV0SttMyQQ+pLFmVegARQAAAAAAAAAAAAAAAAAAAAAAAAAAAABUcXTnOMIvLKKU6b/ABJvR+DWnqz1h8Qt2rK9pJ/Yk+Xk2euIweeElyVmSOipq9tWrS8V0fVGoj0ntFv7yt6XX0OO7WU1X4hwrDb5JVcRNeFOOVfWUX6HTTjKnKF9UpJJ80tssuu+j+ZyXBqyr8W4liL3hRhRw8X0avKVvD3kvQ3j+0dpUldHqUE90mYktj2YGvPDSi7wm0vuvVfU817uLVSnmi1Z5fzsbphaBVDwbh8oTqTqNNJ2pNXvZ7ykns+Xo+pfRd1ueYws34nq1iSSTUW227rU4g4wjKpJt5IyldvomcR7MuGqph5YypTTrYmrVqSnNXllcvdir9FZeh2nH83cTUHaUrRi/wDk7aG1hqChCMYrRJLQ1L4ZUnFezdGtCSlTjeztOCyTj+KLX5FP7NuKVpQxOBxc89fB1cjm950prNSqP0+ljt0c9TwNOHEu+UEp1cLOLmr65JweVpOz0tZtXVrbF341TTpKZ7uRSPdPkZE4PKM3MtMgGLgZBhMyAAAAAAAAAAAAAAAAAAAAAAAwANLFx1uhQlyJK8tSJRNxlUdpOKOC7uGVTyuac02vdlFJKzWuvN/M5jsjxapSpyVbD0lOpUeeVG6zXek7NvTV2vudTx/gbxGWdOajONrX1TtfrtuQ8I4XOlpUhGNtWvjzS3zKT1RBcUtkSpEOcmuUezCMt21MPqiDL5EGMoucXGM3Bu1pxs2rO+z3T2fg3qiXNpqeXUA5Pi+KxtCVJTw8cRBSUo9zOTnJwWbWnOLkv658iy4f2vw1WSpyn3VSy/l1Pdfkr2fzRsY+rarhpclOal4KUWk/nYre0E4VqmV0ouVNq1W3vRk+UZLVGcspjN1vDC5XUdK5c1qutyu4o4xeHqXtlq/OMoSjJeNlLNb8JQV6VRaSaSbXxSdm/JENOT2k9VfTbTlZeSRnDk7Xw3nxdJvbpJ8bp8ozfkkvzaIHx6V3lpxtyu3f1sU6R7SOjk38RxirNSjdRTTV43T16O90/Ehp8SrRioqpKyWl7N/1NXZr2MWGhPPHVX/9ZekmS8Pws687OUml8Um2/TXmQYbDupJRjz+nizrsHhVTiox9X1fUUSU6ailGKskrJHsAyoAAAAAAAAAAAAAAAAAAAAAAACvU05zhLrp4X1sJ4W2zIcSrVZeKi/obdLEqVk3r/f1NIipZo76olxT0T8dfJ8ydQMSgrWY2NBr5EkXs/Gz+RKsLbZu3R6nl0nqrr5l2iSls0IK2gpJ72FSRBmtC6ZqxV0bKm2gqXMKpeLSUKcqkre6m9efgUUsLmnkjJrvIKpTbd/eW6f8AfM0O0nFnUrJPWiqmVLryc311v6WJaGK7uEG9f9PWal1ySVr+K1XyPJy8nZ7uHiuM/utrEYariqcFCXd1KVTM4S2bScWr+u5FTjNSjCtTyyWz3v4xlz8jYxfEIwqqpRmmnHVPk+vyI6/GMyanFa20/J3OMtnl3vnHV9NpRDRq4avmXupvwSbf/prPi8G2lJO2j1+h9DjvbGV8zkx65WLK4UbtJa32NelVuX/CsA178lry8P2ZphY8Iwapw/E/if6IsDXpOxsGa0AAgAAAAAAAAAAAAAAAAAAAAAAAA0MeknmfS3r0K3FVcqjLpKLb9dS8xFBTi4y/x4o57idFwTjL0fJ+RqVFviazSjZ7tfIxGtJcypwONclFT+yrJ/RXN91AJ51pdfov2PCxMub+iI41kTbgHiJdfojFGo5Xv1Ips8UqtrlRvwfj9Ea3aHGqhhcTWcrKnRqSb3atFu6PMMVqiv7YQeIwlejCMZueVSjKTScFJOd2vwp6Es2sfPcHXhjJd3RTUIWzytZJLZRfV9C8rcP1bhJp2Sd3ulsm+fqScL4fTw9NU6aslu+bfNs2pMxOLHWnbLnzt3HO42lKmryaS0V79eRoVMZbR+lzp8VhI1oum0nmsvXkcRxDs3Vc3GOI7qXSV3GS625S21W++5nL48ynh0w+VZ+S54Z2hVOtRjmV5VIJa7XZ9Uq0475V8j4Nh+xVeNWnUlioNwnCSSjO7cZJ5dudj7x3icU3o7LTzNcfHeOacublnJdxC6EG7uEb6WeVX8zdSt/aIIxJZs6OKem9SdFZ3j0sb9Kd0ZqxIACKAAAAAAAAAAAAAAAAAAAAAAAAEOKw0akXGS0/LxRMAOZxfDZ0tVrHqv1IoVZF/wAYqZaNV/hZ88q1pPTNL5s1EdO69tyKXE4wdnPV8lr+RQYSi73ab+bJ40pOUVl1bSQFvX4jZpKMndN8lt/k1a2OnyivVm5XwUk4/wDF/oRywUugFJi+JV7NpxXpc9cLpVkpTr1ZSnPaL0UI/dSXPm/lyLF8Oae1/D8jFSjUjq6byprO7q6XNpc2UQyNepVSL+pwlNXUm9NHyt1KzFcJi/iX6lRTzx8V9r5f+Fp/pafEKba92rFJS0t5T8n+5oVcFGOy+hjD5qcs1OTi7WunrboBvcB4NUp1HKttD4Fvd/e8kX9RGjwOvKc4xqSutTpf4fDx+ZLf2silMqpLqy3/AIbDqySGBgvs38ybNKiEpy0jd9S5wkGopPfmSxglsrHolqgAIAAAAAAAAAAAAAAAAAAAAAAAAAAA1OJ0lOm4yV07XV2ufgVNPhNFW/l/9pfuAWDahgKa+z9X+56p4SClF5dnpq+jAKNudJX2MqjHp+YBEY7iPTl4mHh432/vQwAPGEw8YwUYrRXsrt2V9tWZnh4vdfVmQUVuK4ZSf2P+0v3II8Io/cf9U/3AA2sJw+nCScY2aenvS/Vl2ASkZABFAAAAAAAAAAAAAAAAf//Z" alt="Doctor Image">
+    <form>
+      <h2>Doctor Appointment Form</h2>
+
+      <label for="date">Appointment Date</label>
+      <input type="date" id="date" name="date"/>
+
+      <label for="time">Appointment Time</label>
+      <input type="time" id="time" name="time"/>
+
+      <label>Name</label>
+      <div style="display: flex; gap: 10px;">
+        <input class="inline" type="text" placeholder="First" name="firstName"/>
+        <input class="inline" type="text" placeholder="Last" name="lastName"/>
+      </div>
+
+      <label>Gender</label>
+      <div class="gender-options">
+        <input type="radio" name="gender" value="Male"/> Male
+        <input type="radio" name="gender" value="Female"/> Female
+      </div>
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone"/>
+
+      <label>Address</label>
+      <div style="display: flex; gap: 10px;">
+        <input class="inline" type="text" placeholder="City" name="city"/>
+        <input class="inline" type="text" placeholder="State" name="state"/>
+      </div>
+
+      <label for="query">Your Query</label>
+      <textarea id="query" name="query"></textarea>
+
+      <label>Appointment Type</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="type" value="Cervix checkup"/> Cervix checkup</label><br/>
+        <label><input type="checkbox" name="type" value="Heart checkup"/> Heart checkup</label><br/>
+        <label><input type="checkbox" name="type" value="Eye check-up"/> Eye check-up</label><br/>
+        <label><input type="checkbox" name="type" value="Hearing Test"/> Hearing Test</label>
+      </div>
+
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</body>
+</html>
